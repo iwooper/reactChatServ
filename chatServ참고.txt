@@ -1,0 +1,22 @@
+** function 시작
+cd functions
+firebase serve --only functions
+
+** 값 추가
+curl -contenttype 'application/json' -body '{"cname": "general"}' -method post http://localhost:5000/demoapp-8ef3c/us-central1/v1/channels
+
+** 값 확인
+curl http://localhost:5000/demoapp-8ef3c/us-central1/v1/channels
+
+** function deploy (요금제 선택해야함)
+firebase deploy --only functions
+
+** 값 리셋
+curl -contenttype 'application/json' -body '{}' -method post http://localhost:5000/demoapp-8ef3c/us-central1/v1/reset
+
+** firebase 디버깅 관련
+1. npm i -g firebase-tools
+2. launch.json 편집
+3. firebase emulators:start --inspect-functions
+http://localhost:5001/demoapp-8ef3c/us-central1/v1/channels
+참고 https://stackoverflow.com/questions/45920014/functions-debugging-in-vs-code
