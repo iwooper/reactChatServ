@@ -2,13 +2,13 @@
 cd functions
 firebase serve --only functions
 
-** 값 추가
+** 값 추가 테스트
 curl -contenttype 'application/json' -body '{"cname": "general"}' -method post http://localhost:5000/demoapp-8ef3c/us-central1/v1/channels
 
-** 값 확인
+** 값 확인 테스트
 curl http://localhost:5000/demoapp-8ef3c/us-central1/v1/channels
 
-** function deploy (요금제 선택해야함)
+** function deploy (요금제 선택)
 firebase deploy --only functions
 
 ** 값 리셋
